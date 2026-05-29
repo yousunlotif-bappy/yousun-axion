@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* 
+  Global CSS variables.
+  These variables can be reused across the project.
+*/
+:root {
+  --background: #020806;
+  --foreground: #f8fafc;
+}
+
+/* 
+  Apply border-box sizing to all elements.
+  This makes width and height calculations easier and more predictable.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* 
+  Set the base HTML background color.
+  This helps avoid white background flashes during page load.
+*/
+html {
+  background: #020806;
+}
+
+/* 
+  Main body styling.
+
+  The background uses multiple gradients:
+  - Green glow from the top-left
+  - Gold glow from the bottom-right
+  - Dark linear gradient as the base background
+
+  This creates the futuristic GPU dashboard look.
+*/
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.12), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.08), transparent 34%),
+    linear-gradient(135deg, #020806 0%, #03110d 46%, #020806 100%);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+  Make all buttons show pointer cursor.
+  This improves user interaction feedback.
+*/
+button {
+  cursor: pointer;
+}
+
+/* 
+  Disabled buttons should not look clickable.
+*/
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* 
+  Glassmorphism card style.
+
+  Used for main dashboard cards.
+  It creates:
+  - Dark transparent background
+  - Soft emerald border
+  - Light green glow
+  - Blur effect behind the card
+*/
+.glass-card {
+  background: rgba(7, 20, 17, 0.78);
+  border: 1px solid rgba(52, 211, 153, 0.16);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.06);
+  backdrop-filter: blur(14px);
+}
+
+/* 
+  Softer card style.
+
+  Used for secondary panels or smaller UI sections.
+*/
+.soft-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* 
+  Gold glow utility class.
+
+  Useful for premium, warning, or highlight elements.
+*/
+.gold-glow {
+  box-shadow: 0 0 28px rgba(245, 158, 11, 0.28);
+}
+
+/* 
+  Green glow utility class.
+
+  Useful for active, success, or GPU-ready elements.
+*/
+.green-glow {
+  box-shadow: 0 0 28px rgba(16, 185, 129, 0.22);
+}
+
+/* 
+  Hide scrollbar for WebKit browsers like Chrome, Edge, and Safari.
+*/
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 
+  Hide scrollbar for Firefox.
+*/
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* 
+  Custom thin scrollbar size for WebKit browsers.
+*/
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* 
+  Scrollbar thumb styling.
+
+  This controls the draggable scrollbar part.
+*/
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(52, 211, 153, 0.35);
+  border-radius: 999px;
+}
+
+/* 
+  Scrollbar track styling.
+
+  This controls the background area behind the scrollbar thumb.
+*/
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+
+
